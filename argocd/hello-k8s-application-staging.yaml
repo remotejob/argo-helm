@@ -13,7 +13,7 @@ spec:
       valueFiles:
         - values-staging.yaml
     path: helm
-    repoURL: https://github.com/samiislam/K8s-CICD
+    repoURL: https://github.com/remotejob/argo-helm.git
     targetRevision: HEAD
   syncPolicy:
     automated: {}

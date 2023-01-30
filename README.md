@@ -21,3 +21,9 @@ docker build -t hello-k8s:1.0 .
 docker tag hello-k8s:1.0 remotejob/hello-k8s:1.0
 
 docker push remotejob/hello-k8s:1.0
+
+kubectl apply -f hello-k8s-application.yaml
+
+kubectl port-forward pod/hello-k8s-6dcbd98c48-twn96  5000:5000
+
+kubectl apply -f hello-k8s-application-staging.yaml

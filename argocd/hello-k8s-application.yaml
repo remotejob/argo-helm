@@ -10,6 +10,6 @@ spec:
   project: default
   source:
     path: argocd/hello-k8s-manifest
-    repoURL: https://github.com/samiislam/K8s-CICD
+    repoURL: https://github.com/remotejob/argo-helm.git
     targetRevision: HEAD
   syncPolicy: {}
