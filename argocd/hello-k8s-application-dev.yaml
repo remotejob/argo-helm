@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-k8s-dev
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      valueFiles:
+        - values-dev.yaml
+    path: helm
+    repoURL: https://github.com/remotejob/argo-helm.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}

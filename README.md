@@ -28,3 +28,4 @@ kubectl port-forward pod/hello-k8s-6dcbd98c48-twn96  5000:5000
 
 kubectl apply -f hello-k8s-application-staging.yaml
 kubectl apply -f hello-k8s-application-prod.yaml
+kubectl apply -f hello-k8s-application-dev.yaml
