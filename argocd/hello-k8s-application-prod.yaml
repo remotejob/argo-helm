@@ -13,5 +13,5 @@ spec:
       valueFiles:
         - values-prod.yaml
     path: helm
-    repoURL: https://github.com/samiislam/K8s-CICD
+    repoURL: https://github.com/remotejob/argo-helm.git
     targetRevision: HEAD
