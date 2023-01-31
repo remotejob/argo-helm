@@ -24,7 +24,7 @@ docker push remotejob/hello-k8s:1.0
 
 kubectl apply -f hello-k8s-application.yaml
 
-kubectl port-forward pod/hello-k8s-6dcbd98c48-twn96  5000:5000
+kubectl port-forward pod/hello-k8s-5f4578dd8-z7vfh 5000:5000 -n prod
 
 kubectl apply -f hello-k8s-application-staging.yaml
 kubectl apply -f hello-k8s-application-prod.yaml
