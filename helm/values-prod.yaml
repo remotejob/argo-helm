@@ -7,9 +7,9 @@ service:
 replicaCount: 6
 
 image:
-  tag: '4.0'
+  tag: '5.0'
   pullPolicy: Always
-  
+
 resources:
   requests:
     cpu: 350m
