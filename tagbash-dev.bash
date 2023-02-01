@@ -2,7 +2,7 @@ git fetch --all --tags
 export LASTMESSAGE=`git log -1 --format=%s`
 export BRANCH=`git branch --show-current`
 echo "$BRANCH->$LASTMESSAGE"
-RES=$(git show-ref --tags |grep v0)
+RES=$(git show-ref --tags |grep 0)
 if [ -z "$RES" ]; then
     NEW_TAG=0.0.0-dev
 else
