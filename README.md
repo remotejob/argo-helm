@@ -31,3 +31,9 @@ kubectl apply -f hello-k8s-application-prod.yaml
 kubectl apply -f hello-k8s-application-dev.yaml
 
 kubectl delete -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+export GITHUB_TOKEN=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
+
+flux check --pre
+
+flux bootstrap github --owner=remotejob --repository=argo-helm --path=clusters/my-cluster --personal
