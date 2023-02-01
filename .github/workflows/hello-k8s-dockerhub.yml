@@ -4,7 +4,9 @@ name: hello-k8s - Package with Docker
 # events but only for the main branch
 on:
   push:
-    branches: [main]
+    # branches: [main]
+    tags:
+      - "*"
 
 jobs:
   # This workflow contains a single job called "build"
