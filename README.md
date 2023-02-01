@@ -43,3 +43,6 @@ flux uninstall --namespace=flux-system
 k create ns argo-helm-config
 
 flux create source git argo-helm-config --url=https://github.com/remotejob/argo-helm --tag-semver --interval=3m --username=remotejob --password=$GITHUB_TOKEN --namespace argo-helm-config --export > clusters/my-cluster/gitsource.yaml 
+
+
+flux create hr hello-k8s --chart=hello-k8s --source=GitRepository/argo-helm-config --chart-version=">0.0.0" --namespace argo-helm-config --interval=3m --export > clusters/my-cluster/githelmhr.yaml
