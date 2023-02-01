@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: hello-k8s-staging-dev
+  name: hello-k8s-dev
   namespace: argo-helm-config
 spec:
   chart:
