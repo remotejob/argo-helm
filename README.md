@@ -39,3 +39,7 @@ flux check --pre
 flux bootstrap github --owner=remotejob --repository=argo-helm --branch=main --path=clusters/my-cluster --personal
 
 flux uninstall --namespace=flux-system
+
+k create ns argo-helm-config
+
+flux create source git argo-helm-config --url=https://github.com/remotejob/argo-helm --interval=5m --username=remotejob --password=$GITHUB_TOKEN --namespace argo-helm-config --export > clusters/my-cluster/gitsource.yaml 
