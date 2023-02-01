@@ -2,7 +2,7 @@ namespace:
   name: dev
 
 service:
-  port: 7111
+  port: 8111
 
 image:
   tag: '3.0'
