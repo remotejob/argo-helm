@@ -3,7 +3,7 @@ name: hello-k8s
 description: Install hello-k8s
 keywords:
   - hello-k8s
-version: 0.0.17
+version: 0.0.18
 maintainers:
   - name: remotejob
     email: myemail@hotmail.com
