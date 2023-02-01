@@ -5,12 +5,14 @@ metadata:
   name: argo-helm-config
   namespace: argo-helm-config
 spec:
-  interval: 1m0s
-  # ignore: |
-  #   /*
-  #   !/helm/
-  
-  ref:
-    semver:
+  interval: 1m
   url: https://github.com/remotejob/argo-helm
+  ref:
+    branch: master
+  ignore: |
+    # exclude all
+    /*
+    # include charts directory
+    !/helm/ 
+
 
