@@ -29,3 +29,5 @@ kubectl port-forward pod/hello-k8s-7c46df7845-lqk8c 5000:5000 -n prod
 kubectl apply -f hello-k8s-application-staging.yaml
 kubectl apply -f hello-k8s-application-prod.yaml
 kubectl apply -f hello-k8s-application-dev.yaml
+
+kubectl delete -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
