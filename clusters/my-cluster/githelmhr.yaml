@@ -11,7 +11,7 @@ spec:
       reconcileStrategy: ChartVersion
       valuesFiles:
        - ./helm/values.yaml
-       - ./helm/values-prod.yaml
+       - ./helm/values-staging.yaml
       sourceRef:
         kind: GitRepository
         name: argo-helm-config
