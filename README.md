@@ -46,3 +46,5 @@ flux create source git argo-helm-config --url=https://github.com/remotejob/argo-
 
 
 flux create hr hello-k8s --chart=hello-k8s --source=GitRepository/argo-helm-config --chart-version=">0.0.0" --namespace argo-helm-config --interval=3m --export > clusters/my-cluster/githelmhr.yaml
+
+kubectl describe helmrelease hello-k8s -n argo-helm-config 
