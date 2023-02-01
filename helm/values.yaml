@@ -1,5 +1,5 @@
 namespace:
-  name: argo-helm-config
+  name: dev
 
 service:
   port: 4111
