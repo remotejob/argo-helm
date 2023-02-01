@@ -6,11 +6,11 @@ metadata:
   namespace: argo-helm-config
 spec:
   interval: 1m0s
-  ignore: |
-    /*
-    !/helm/
+  # ignore: |
+  #   /*
+  #   !/helm/
   
   ref:
-    semver: --interval=3m
+    semver:
   url: https://github.com/remotejob/argo-helm
 
