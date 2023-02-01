@@ -37,3 +37,5 @@ export GITHUB_TOKEN=***********
 flux check --pre
 
 flux bootstrap github --owner=remotejob --repository=argo-helm --path=clusters/my-cluster --personal
+
+flux uninstall --namespace=flux-system
