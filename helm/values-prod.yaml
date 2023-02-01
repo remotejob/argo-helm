@@ -7,7 +7,7 @@ service:
 replicaCount: 4
 
 image:
-  tag: '3.0'
+  tag: '5.0'
   pullPolicy: Always
 
 resources:

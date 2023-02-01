@@ -10,8 +10,8 @@ spec:
       chart: ./helm
       reconcileStrategy: ChartVersion
       valuesFiles:
-       - ./helm/values-prod.yaml
        - ./helm/values.yaml
+       - ./helm/values-prod.yaml
       sourceRef:
         kind: GitRepository
         name: argo-helm-config
