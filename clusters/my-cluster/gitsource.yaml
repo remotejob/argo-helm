@@ -8,7 +8,7 @@ spec:
   interval: 1m
   url: https://github.com/remotejob/argo-helm
   ref:
-    branch: master
+    branch: main
   ignore: |
     # exclude all
     /*
