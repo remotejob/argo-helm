@@ -5,10 +5,10 @@ service:
   port: 7111
 
 image:
-  tag: '0.0.0'
+  tag: '0.0.1'
   pullPolicy: Always
 
-replicaCount: 4
+replicaCount: 2
 
 resources:
   requests:
