@@ -5,7 +5,7 @@ metadata:
   name: argo-helm-config
   namespace: argo-helm-config
 spec:
-  interval: 1m
+  interval: 3m
   url: https://github.com/remotejob/argo-helm
   ref:
     branch: main
