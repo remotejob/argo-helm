@@ -5,7 +5,7 @@ service:
   port: 7111
 
 image:
-  tag: '4.0'
+  tag: '5.0'
   pullPolicy: Always
 
 replicaCount: 1
