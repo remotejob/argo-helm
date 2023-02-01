@@ -33,4 +33,4 @@ jobs:
           file: ./project/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: remotejob/hello-k8s:0.0.0
+          tags: remotejob/hello-k8s:0.0.1
