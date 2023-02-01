@@ -10,6 +10,7 @@ spec:
       chart: ./helm
       reconcileStrategy: ChartVersion
       valuesFiles:
+       - ./helm/values.yaml
        - ./helm/values-staging.yaml
       sourceRef:
         kind: GitRepository

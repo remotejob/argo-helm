@@ -2,24 +2,18 @@ namespace:
   name: dev
 
 service:
-  port: 4111
-  targetPort: 5000
-  protocol: TCP
-  type: ClusterIP
+  port: 7111
 
 image:
-  repository: remotejob/hello-k8s
   tag: '3.0'
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 replicaCount: 1
 
 resources:
   requests:
-    cpu: 250m
-    memory: 64Mi
+    cpu: 300m
+    memory: 90Mi
   limits:
     cpu: 500m
     memory: 128Mi
-
-containerPort: 5000

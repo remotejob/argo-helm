@@ -1,0 +1,25 @@
+namespace:
+  name: staging
+
+service:
+  port: 4111
+  targetPort: 5000
+  protocol: TCP
+  type: ClusterIP
+
+image:
+  repository: remotejob/hello-k8s
+  tag: '4.0'
+  pullPolicy: IfNotPresent
+
+replicaCount: 3
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 64Mi
+  limits:
+    cpu: 500m
+    memory: 128Mi
+
+containerPort: 5000
