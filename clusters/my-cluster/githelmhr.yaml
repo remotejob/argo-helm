@@ -10,7 +10,7 @@ spec:
       chart: ./helm
       reconcileStrategy: ChartVersion
       valuesFiles:
-       - ./helm/values-dev.yaml
+       - ./helm/values-staging.yaml
       sourceRef:
         kind: GitRepository
         name: argo-helm-config
