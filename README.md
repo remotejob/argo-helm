@@ -1,6 +1,8 @@
 # K8s-CICD
 https://sami-islam.medium.com/stay-safe-with-kubernetes-ci-cd-52d51a7af99c
 
+https://earthly.dev/blog/k8s-gitops-with-fluxcd/
+
 k config get-contexts 
 k config use-context prod
 kubectl config set-context --current --namespace expertjob-online-prod 
@@ -48,3 +50,39 @@ flux create source git argo-helm-config --url=https://github.com/remotejob/argo-
 flux create hr hello-k8s --chart=hello-k8s --source=GitRepository/argo-helm-config --chart-version=">0.0.0" --namespace argo-helm-config --interval=3m --export > clusters/my-cluster/githelmhr.yaml
 
 kubectl describe helmrelease hello-k8s -n argo-helm-config 
+
+# monitoring
+flux create source git flux-monitoring --interval=30m --url=https://github.com/fluxcd/flux2 --branch=main
+
+flux create kustomization kube-prometheus-stack --interval=1h --prune --source=flux-monitoring --path="./manifests/monitoring/kube-prometheus-stack" --health-check-timeout=5m --wait
+
+flux create kustomization monitoring-config \
+  --depends-on=kube-prometheus-stack \
+  --interval=1h \
+  --prune=true \
+  --source=flux-monitoring \
+  --path="./manifests/monitoring/monitoring-config" \
+  --health-check-timeout=1m \
+  --wait
+
+kubectl -n monitoring port-forward svc/kube-prometheus-stack-grafana 3000:80
+
+#SLACK
+
+kubectl -n flux-system create secret generic slack-url --from-literal=address=your_slack_webhook
+
+kubectl -n flux-system create secret generic slack-url --from-literal=address=https://hooks.slack.com/services/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
+
+flux create alert-provider slack \
+  --type slack \
+  --channel general \
+  --secret-ref slack-url \
+  --export > ./clusters/my-cluster/slack-alert-provider.yaml
+
+
+flux create alert slack-alert \
+  --event-severity info \
+  --event-source Kustomization/* \
+  --event-source GitRepository/* \
+  --provider-ref slack \
+  --export > ./clusters/my-cluster/slack-alert.yaml
