@@ -11,6 +11,9 @@ spec:
     name: '*'
   - kind: GitRepository
     name: '*'
+  - kind: HelmRelease
+    name: '*'
+    namespace: dev  
   providerRef:
     name: slack
 
