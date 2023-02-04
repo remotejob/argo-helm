@@ -71,7 +71,6 @@ kubectl -n monitoring port-forward svc/kube-prometheus-stack-grafana 3000:80
 
 kubectl -n flux-system create secret generic slack-url --from-literal=address=your_slack_webhook
 
-kubectl -n flux-system create secret generic slack-url --from-literal=address=https://hooks.slack.com/services/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
 
 flux create alert-provider slack \
   --type slack \
